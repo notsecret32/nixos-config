@@ -5,12 +5,16 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
   };
 
-  outputs = { self, nixpkgs, ... }: {
-    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./configuration.nix
-      ];
+  outputs = { self, nixpkgs, ... }@inputs: 
+    let
+      systemArch = "x86_64-linux";
+      lib = nixpkgs.lib;
+    in {
+      nixosConfigurations.default = lib.nixosSystem {
+        system = systemArch;
+        modules = [
+          ./configuration.nix
+        ];
+      };
     };
-  };
 }
