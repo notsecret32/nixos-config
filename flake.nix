@@ -12,18 +12,23 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
     let
-      systemArch = "x86_64-linux";
+      # ========== Settings ==========
+      wm = "gnome"; # Window Manager
+      systemArch = "x86_64-linux"; # System Architecture
+
+      # ========== Other stuff ==========
       lib = nixpkgs.lib;
     in {
-      nixosConfigurations.default = lib.nixosSystem {
+      nixosConfigurations.notebook = lib.nixosSystem {
         system = systemArch;
         modules = [
-          ./configuration.nix
+	  ./modules/wm/${wm}
+	  ./hosts/notebook/default.nix
 	  home-manager.nixosModules.home-manager
 	  {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.notsecret32 = import ./home.nix;
+            home-manager.users.notsecret32 = import ./users/notsecret32/home.nix;
 	  }
         ];
       };
