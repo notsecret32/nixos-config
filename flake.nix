@@ -22,7 +22,7 @@
       nixosConfigurations.notebook = lib.nixosSystem {
         system = systemArch;
         modules = [
-	  ./modules/wm/${wm}
+	  ./home/wm/${wm}
 	  ./hosts/notebook/default.nix
 	  home-manager.nixosModules.home-manager
 	  {
