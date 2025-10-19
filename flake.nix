@@ -10,7 +10,7 @@
     {
       nixosConfigurations.linux = nixpkgs.lib.nixosSystem {
         modules = [
-          ./configuration.nix
+          ./hosts/linux/configuration.nix
         ];
       };
     };
