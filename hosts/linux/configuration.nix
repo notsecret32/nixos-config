@@ -1,6 +1,5 @@
 {
   pkgs,
-  stateVersion,
   hostname,
   ...
 }:
@@ -16,5 +15,5 @@
 
   networking.hostName = hostname;
 
-  system.stateVersion = stateVersion;
+  system.stateVersion = "25.05";
 }

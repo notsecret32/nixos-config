@@ -2,7 +2,7 @@
   description = "My NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -19,23 +19,21 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      homeStateVersion = "25.05";
       user = "notsecret32";
       hosts = [
         {
           hostname = "linux";
-          stateVersion = "25.05";
         }
       ];
 
       makeSystem =
-        { hostname, stateVersion }:
+        { hostname }:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
             inherit
               inputs
-              stateVersion
+
               hostname
               user
               ;
@@ -47,7 +45,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.${user} = ./home-manager/home.nix;
-              home-manager.extraSpecialArgs = { inherit user homeStateVersion; };
+              home-manager.extraSpecialArgs = { inherit user; };
             }
           ];
         };
@@ -58,7 +56,7 @@
         configs
         // {
           "${host.hostname}" = makeSystem {
-            inherit (host) hostname stateVersion;
+            inherit (host) hostname;
           };
         }
       ) { } hosts;
