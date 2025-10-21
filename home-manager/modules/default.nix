@@ -4,5 +4,6 @@
     ./git.nix
     ./nh.nix
     ./vscode.nix
+    ./zsh.nix
   ];
 }
