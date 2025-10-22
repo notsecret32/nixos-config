@@ -8,6 +8,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    grub2-themes = {
+      url = "github:vinceliuice/grub2-themes";
+    };
   };
 
   outputs =
@@ -15,6 +19,7 @@
       self,
       nixpkgs,
       home-manager,
+      grub2-themes,
       ...
     }@inputs:
     let
@@ -33,13 +38,13 @@
           specialArgs = {
             inherit
               inputs
-
               hostname
               user
               ;
           };
           modules = [
             ./hosts/${hostname}/configuration.nix
+            grub2-themes.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
