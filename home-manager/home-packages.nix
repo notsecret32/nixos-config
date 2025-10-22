@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     # Gui apps
+    discord
     github-desktop
     telegram-desktop
 
