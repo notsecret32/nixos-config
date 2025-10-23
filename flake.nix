@@ -12,6 +12,11 @@
     grub2-themes = {
       url = "github:vinceliuice/grub2-themes";
     };
+
+    prismlauncher = {
+      url = "github:Diegiwg/PrismLauncher-Cracked";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -20,6 +25,7 @@
       nixpkgs,
       home-manager,
       grub2-themes,
+      prismlauncher,
       ...
     }@inputs:
     let
@@ -52,6 +58,12 @@
               home-manager.users.${user} = ./home-manager/home.nix;
               home-manager.extraSpecialArgs = { inherit user; };
             }
+            (
+              { pkgs, ... }:
+              {
+                environment.systemPackages = [ prismlauncher.packages.${pkgs.system}.prismlauncher ];
+              }
+            )
           ];
         };
     in
