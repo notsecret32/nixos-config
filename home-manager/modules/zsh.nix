@@ -10,7 +10,7 @@
     shellAliases = {
       ll = "ls -l";
       ".." = "cd ..";
-      nixconfig = "code $NIXOS_CONFIG_DIR";
+      cfg = "nvim $NH_OS_FLAKE";
     };
   };
 
