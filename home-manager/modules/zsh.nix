@@ -10,6 +10,7 @@
     shellAliases = {
       ll = "ls -l";
       ".." = "cd ..";
+      vi = "nvim";
       cfg = "nvim $NH_OS_FLAKE";
     };
   };
