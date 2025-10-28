@@ -42,11 +42,7 @@
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
-            inherit
-              inputs
-              hostname
-              user
-              ;
+            inherit inputs hostname user;
           };
           modules = [
             ./hosts/${hostname}/configuration.nix
