@@ -7,10 +7,6 @@
     github-desktop
     telegram-desktop
 
-    # Terminal
-    nixd
-    nixfmt-rfc-style
-
     # Utils
     gccgo15
     unzip
@@ -21,5 +17,12 @@
     # Lua
     lua
     stylua
+
+    # Nix
+    nil
+    nixfmt
+
+    # NodeJS
+    nodejs_24
   ];
 }
