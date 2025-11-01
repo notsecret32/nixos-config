@@ -5,6 +5,7 @@
     # Gui apps
     discord
     github-desktop
+    godot_4
     telegram-desktop
 
     # Utils
