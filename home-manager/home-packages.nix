@@ -8,6 +8,7 @@
     telegram-desktop
 
     # Utils
+    bun
     gccgo15
     unzip
     gnumake
