@@ -8,23 +8,12 @@
     godot_4
     telegram-desktop
 
-    # Utils
-    bun
-    gccgo15
-    unzip
-    gnumake
-    ripgrep
-    fd
-
-    # Lua
-    lua
-    stylua
-
     # Nix
     nil
     nixfmt
 
-    # NodeJS
+    # Frontend
+    bun
     nodejs_24
   ];
 }
