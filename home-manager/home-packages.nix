@@ -7,6 +7,7 @@
     github-desktop
     godot_4
     telegram-desktop
+    yandex-music
 
     # Games
     (vintagestory.overrideAttrs (oldAttrs: rec {
