@@ -80,10 +80,6 @@
           nativeBuildInputs = with pkgs; [
             pkg-config
             gobject-introspection
-            cargo
-            clippy
-            rustfmt
-            rustc
           ];
 
           buildInputs = with pkgs; [
@@ -99,12 +95,19 @@
             pango
             webkitgtk_4_1
             openssl
+            rustup
           ];
 
           shellHook = ''
-            echo "Tauri dev environment activated"
+            echo "Installing Rust toolchain via rustup..."
+            rustup default stable
+            rustup component add rustfmt
+            rustup component add clippy
+
             export WEBKIT_DISABLE_DMABUF_RENDERER=1
             export RUST_BACKTRACE=1
+
+            echo "Tauri environment is set up!"
           '';
         };
       };
