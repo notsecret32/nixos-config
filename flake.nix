@@ -36,6 +36,7 @@
           hostname = "linux";
         }
       ];
+      pkgs = nixpkgs.legacyPackages.${system};
 
       makeSystem =
         { hostname }:
@@ -73,5 +74,39 @@
           };
         }
       ) { } hosts;
+
+      devShells.${system} = {
+        tauri = pkgs.mkShell {
+          nativeBuildInputs = with pkgs; [
+            pkg-config
+            gobject-introspection
+            cargo
+            clippy
+            rustfmt
+            rustc
+          ];
+
+          buildInputs = with pkgs; [
+            at-spi2-atk
+            atkmm
+            cairo
+            gdk-pixbuf
+            glib
+            gtk3
+            harfbuzz
+            librsvg
+            libsoup_3
+            pango
+            webkitgtk_4_1
+            openssl
+          ];
+
+          shellHook = ''
+            echo "Tauri dev environment activated"
+            export WEBKIT_DISABLE_DMABUF_RENDERER=1
+            export RUST_BACKTRACE=1
+          '';
+        };
+      };
     };
 }
