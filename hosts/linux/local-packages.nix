@@ -1,6 +1,10 @@
 {
   programs = {
-    steam.enable = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    };
     nix-ld.enable = true;
   };
 

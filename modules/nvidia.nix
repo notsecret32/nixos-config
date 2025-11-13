@@ -6,6 +6,11 @@
   hardware = {
     graphics.enable = true;
 
+    opengl = {
+      enable = true;
+      driSupport32Bit = true;
+    };
+
     nvidia = {
       open = true;
       modesetting.enable = true;

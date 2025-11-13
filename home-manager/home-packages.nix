@@ -8,6 +8,7 @@
     godot_4
     telegram-desktop
     yandex-music
+    qbittorrent
 
     # Games
     (vintagestory.overrideAttrs (oldAttrs: rec {
@@ -25,5 +26,14 @@
     # Frontend
     bun
     nodejs_24
+
+    # Gaming
+    wine
+    winetricks
+    winePackages.fonts
+    lutris
+    gamemode
+    mangohud
+
   ];
 }
