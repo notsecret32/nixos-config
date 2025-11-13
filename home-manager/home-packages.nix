@@ -34,6 +34,5 @@
     lutris
     gamemode
     mangohud
-
   ];
 }
