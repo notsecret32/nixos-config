@@ -7,6 +7,7 @@
     github-desktop
     godot_4
     telegram-desktop
+    r2modman
     yandex-music
     qbittorrent
 
