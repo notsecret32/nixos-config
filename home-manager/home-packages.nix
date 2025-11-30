@@ -35,5 +35,8 @@
     lutris
     gamemode
     mangohud
+
+    # AppImages
+    (callPackage ../packages/dolphin-anty.nix { })
   ];
 }
