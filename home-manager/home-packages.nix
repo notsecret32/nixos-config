@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     # Gui apps
     discord
+    google-chrome
     github-desktop
     godot_4
     telegram-desktop
