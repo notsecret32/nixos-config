@@ -9,7 +9,6 @@
     google-chrome
     github-desktop
     godot_4
-    notion-app
     telegram-desktop
     r2modman
     yandex-music
