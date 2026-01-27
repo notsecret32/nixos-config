@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   programs = {
     appimage = {
@@ -9,8 +11,18 @@
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
+      gamescopeSession.enable = true;
     };
+
     nix-ld.enable = true;
+
+    gamemode = {
+      enable = true;
+    };
+
+    gamescope = {
+      enable = true;
+    };
   };
 
   services = {

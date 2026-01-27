@@ -15,6 +15,10 @@
       jetbrains-mono
       mononoki
     ];
+
+    sessionVariables = {
+      STEAM_EXTRA_COMPAT_TOOLS_PATHT = "\${HOME}/.steam/root/compatibilitytools.d";
+    };
   };
 
   fonts.fontconfig.enable = true;

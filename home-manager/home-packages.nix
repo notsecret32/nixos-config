@@ -3,12 +3,14 @@
 {
   home.packages = with pkgs; [
     # Gui apps
+    android-studio
     davinci-resolve
     discord
     ghostty
     google-chrome
     github-desktop
     godot_4
+    obs-studio
     telegram-desktop
     r2modman
     yandex-music
@@ -32,15 +34,16 @@
     bun
     nodejs_24
 
-    # Gaming
-    wine
-    winetricks
-    winePackages.fonts
-    lutris
-    gamemode
-    mangohud
-
     # AppImages
     # (callPackage ../packages/dolphin-anty.nix { })
+
+    # Gaming Packages
+    protonup-ng
+    wineWowPackages.stable
+    winetricks
+
+    # Game Launchers
+    bottles
+    heroic
   ];
 }
