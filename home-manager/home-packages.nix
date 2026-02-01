@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     # Gui apps
+    transmission_4-qt
     android-studio
     davinci-resolve
     discord
@@ -45,5 +46,6 @@
     # Game Launchers
     bottles
     heroic
+    lutris
   ];
 }
