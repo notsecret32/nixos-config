@@ -10,6 +10,9 @@
       extraGroups = [
         "wheel"
         "networkmanager"
+        "docker"
+        "kvm"
+        "adbusers"
       ];
     };
   };

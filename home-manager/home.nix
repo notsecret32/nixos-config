@@ -14,6 +14,7 @@
       fira-code
       jetbrains-mono
       mononoki
+      hack
     ];
 
     sessionVariables = {

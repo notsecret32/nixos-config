@@ -2,6 +2,7 @@
   imports = [
     ./audio.nix
     ./boot.nix
+    ./docker.nix
     ./home-manager.nix
     ./locale.nix
     ./network.nix

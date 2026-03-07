@@ -25,9 +25,15 @@
 
     extraInit = ''
       export PATH=$PATH:$ANDROID_HOME/emulator
+      export PATH=$PATH:$ANDROID_HOME/tools
+      export PATH=$PATH:$ANDROID_HOME/tools/bin
       export PATH=$PATH:$ANDROID_HOME/platform-tools
+      export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
     '';
   };
+
+  nixpkgs.config.android_sdk.accept_license = true;
+  virtualisation.libvirtd.enable = true;
 
   networking.hostName = hostname;
 

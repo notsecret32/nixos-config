@@ -17,6 +17,9 @@
     yandex-music
     qbittorrent
     vlc
+    slack
+    haguichi
+    vinegar
 
     # Games
     # (vintagestory.overrideAttrs (oldAttrs: rec {
@@ -40,6 +43,7 @@
 
     # Gaming Packages
     protonup-ng
+    protontricks
     wineWowPackages.stable
     winetricks
 
@@ -47,5 +51,26 @@
     bottles
     heroic
     lutris
+
+    # CLI
+    rar
+    zip
+
+    # Packages
+    neovim
+    lazygit
+    wezterm
+    zoxide
+    tree-sitter
+    tmux
+    eza
+    stow
+    fzf
+    gnumake
+    gccgo15
+    jdk17
+    gradle
+    dpkg
+    apt
   ];
 }
